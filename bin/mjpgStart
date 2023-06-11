@@ -71,5 +71,5 @@ for AP in $VIDEO_TEST; do
      fi
    done
 echo "Best resolution: $BEST_WIDTH x $BEST_HEIGHT at $BEST_FRAMERATE"
-echo "${MJPG_STREAMER} -i \"${MJPG_PLUGIN_DIR}/input_uvc.so -d ${VIDEO} --fps ${BEST_FRAMERATE} -q ${WEBCAM_QUALITY} -r ${BEST_WIDTH}x${BEST_HEIGHT}${MJPG_PARAM_YUYV} ${WEBCAM_USB_PARAMS}\" -o \"${MJPG_PLUGIN_DIR}/output_http.so -p 505${DEV} -w ${MJPG_WWW_DIR}\" -b"
-${MJPG_STREAMER} -i "${MJPG_PLUGIN_DIR}/input_uvc.so -d ${VIDEO} --fps ${BEST_FRAMERATE} -q ${WEBCAM_QUALITY} -r ${BEST_WIDTH}x${BEST_HEIGHT}${MJPG_PARAM_YUYV} ${WEBCAM_USB_PARAMS}" -o "${MJPG_PLUGIN_DIR}/output_http.so -p 505${DEV} -w ${MJPG_WWW_DIR}" -b
+echo "${MJPG_STREAMER} -i \"${MJPG_PLUGIN_DIR}/input_uvc.so -d ${VIDEO} --fps ${BEST_FRAMERATE} -q ${WEBCAM_QUALITY} -r ${BEST_WIDTH}x${BEST_HEIGHT}${MJPG_PARAM_YUYV} ${WEBCAM_USB_PARAMS}\" -o \"${MJPG_PLUGIN_DIR}/output_http.so -p 808${DEV} -w ${MJPG_WWW_DIR}\" -b"
+${MJPG_STREAMER} -i "${MJPG_PLUGIN_DIR}/input_uvc.so -d ${VIDEO} --fps ${BEST_FRAMERATE} -q ${WEBCAM_QUALITY} -r ${BEST_WIDTH}x${BEST_HEIGHT}${MJPG_PARAM_YUYV} ${WEBCAM_USB_PARAMS}" -o "${MJPG_PLUGIN_DIR}/output_http.so -p 808${DEV} -w ${MJPG_WWW_DIR}" -b
