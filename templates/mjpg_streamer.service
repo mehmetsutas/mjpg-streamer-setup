@@ -1,12 +1,12 @@
 [Unit]
-Description=mjpg_streamer for picam
+Description=mjpg_streamer for opi
 After=network.target
 
 [Service]
 Type=simple
 User=root
 RemainAfterExit=yes
-ExecStart=/usr/local/Repetier-Setup/bin/startAllCams
+ExecStart=/usr/local/mjpg-streamer-setup/bin/startAllCams
 
 [Install]
 WantedBy=multi-user.target
