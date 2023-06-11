@@ -34,7 +34,8 @@ BEST_FRAMERATE=0
 BEST_ERROR=$(($WEBCAM_WIDTH * $WEBCAM_HEIGHT))
 IN_FORMAT=0
 for AP in $VIDEO_TEST; do
-     if [[ $AP =~ Pixel[[:space:]]Format:.*\'(.*)\' ]]; then
+#     if [[ $AP =~ Pixel[[:space:]]Format:.*\'(.*)\' ]]; then
+      if [[ $AP =~ \[.*\]:[[:space:]].*\'(.*)\' ]]; then
         CUR_FORMAT=${BASH_REMATCH[1]}
         IN_FORMAT=0
         if [[ "$CUR_FORMAT" == "$PIXEL_FORMAT" ]]; then
@@ -70,6 +71,10 @@ for AP in $VIDEO_TEST; do
        fi
      fi
    done
+#   BEST_WIDTH=1280
+#   BEST_HEIGHT=720
+#   BEST_FRAMERATE=25
+   
 echo "Best resolution: $BEST_WIDTH x $BEST_HEIGHT at $BEST_FRAMERATE"
 echo "${MJPG_STREAMER} -i \"${MJPG_PLUGIN_DIR}/input_uvc.so -d ${VIDEO} --fps ${BEST_FRAMERATE} -q ${WEBCAM_QUALITY} -r ${BEST_WIDTH}x${BEST_HEIGHT}${MJPG_PARAM_YUYV} ${WEBCAM_USB_PARAMS}\" -o \"${MJPG_PLUGIN_DIR}/output_http.so -p 808${DEV} -w ${MJPG_WWW_DIR}\" -b"
 ${MJPG_STREAMER} -i "${MJPG_PLUGIN_DIR}/input_uvc.so -d ${VIDEO} --fps ${BEST_FRAMERATE} -q ${WEBCAM_QUALITY} -r ${BEST_WIDTH}x${BEST_HEIGHT}${MJPG_PARAM_YUYV} ${WEBCAM_USB_PARAMS}" -o "${MJPG_PLUGIN_DIR}/output_http.so -p 808${DEV} -w ${MJPG_WWW_DIR}" -b
