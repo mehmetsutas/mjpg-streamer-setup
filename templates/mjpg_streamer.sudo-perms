@@ -1,2 +1,2 @@
-pi ALL=NOPASSWD: /usr/local/fmjpg-streamer-setup/bin/installWebcams
+pi ALL=NOPASSWD: /usr/local/mjpg-streamer-setup/bin/installWebcams
 
