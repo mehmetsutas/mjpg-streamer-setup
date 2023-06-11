@@ -4,7 +4,8 @@ Installing MJPG-streamer for multiple cameras can be simplified by using the scr
 
 **1. Install build dependencies**
 
-`sudo apt-get updatesudo apt-get install libjpeg8-dev imagemagick libv4l-dev v4l-utils make gcc git cmake g++`
+sudo apt update
+sudo apt install libjpeg62-turbo-dev imagemagick libv4l-dev v4l-utils make gcc git cmake g++`
 
 **2. Download MJPG-streamer**
 
@@ -31,7 +32,7 @@ Installing MJPG-streamer for multiple cameras can be simplified by using the scr
 ```
 sudo su
 cd /usr/local 
-git clone https://github.com/john-clark/mjpg-streamer-setup.git
+git clone https://github.com/mehmetsutas/mjpg-streamer-setup.git
 cd mjpg-streamer-setup
 ./installWebcams install
 exit
@@ -55,8 +56,8 @@ https://3dprinting.stackexchange.com/questions/3261/octoprint-mjpg-streamer-conf
 
 the URL to type into octoprint are:
 
-`http://{url.or.ip}:5051/?action=stream`
-`http://{url.or.ip}:5051/?action=snapshot`
+`http://{url.or.ip}:8080/?action=stream`
+`http://{url.or.ip}:8080/?action=snapshot`
 
 More info here - http://docs.octoprint.org/en/master/configuration/config_yaml.html#webcam
 
