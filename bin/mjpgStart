@@ -19,7 +19,8 @@ if [ ! -e "/dev/video${DEV}" ]; then
 fi
 VIDEO="/dev/video${DEV}"
 VIDEO_TEST=$(/usr/bin/v4l2-ctl --list-formats-ext -d $VIDEO)
-MJPG_TEST=$(echo "$VIDEO_TEST" | /bin/grep "Pixel Format: 'MJPG' (compressed)")
+#MJPG_TEST=$(echo "$VIDEO_TEST" | /bin/grep "Pixel Format: 'MJPG' (compressed)")
+MJPG_TEST=$(echo "$VIDEO_TEST" | /bin/grep "'MJPG' (Motion-JPEG, compressed)")
 MJPG_PARAM_YUYV=""
 PIXEL_FORMAT="MJPG"
 if [ "$MJPG_TEST" == "" ]; then
