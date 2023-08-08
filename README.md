@@ -17,7 +17,8 @@ sudo apt install libjpeg62-turbo-dev imagemagick libv4l-dev v4l-utils make gcc g
 
 **4. Build MJPG-streamer**
 
-`cmake -G &quot;Unix Makefiles&quot;make`
+cmake -G "Unix Makefiles"  
+make
 
 **5. Install MJPG-streamer**
 
